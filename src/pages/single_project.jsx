@@ -10,7 +10,7 @@ const SingleProjects= () => {
 
   useEffect(()=>{
     const fetchData=async()=>{
-      const res=await axios.get(`http://localhost:4000/projects/${projectId}`);
+      const res=await axios.get(`https://hexa-backend.onrender.com/projects/${projectId}`);
     setProject(res.data);
     }
     fetchData();
@@ -18,7 +18,7 @@ const SingleProjects= () => {
 
   return (
     <div className='single_project'>
-      <img src={`http://localhost:4000/uploads/${getProject.img}`} alt="" />
+      <img src={`https://hexa-backend.onrender.com/uploads/${getProject.img}`} alt="" />
       <h3>{getProject.title}</h3>
       <p>{getProject.desc}</p>
       <button><Link to="/write-project" state={getProject}>Edit</Link></button>

@@ -5,7 +5,7 @@ const ProjectItem = ({project,id,img,title,desc,category}) => {
   return (
     <>
     <div className='project_item' key={project._id}>
-        <img src={`http://localhost:4000/uploads/${project.img}`} alt="" />
+        <img src={`https://hexa-backend.onrender.com/uploads/${project.img}`} alt="" />
         <div className='script'>
             <h3><Link to={`/project/${project._id}`}>{project.title}</Link></h3>
             <p>{project.desc}</p>

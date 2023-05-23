@@ -17,7 +17,7 @@ const WriteProject = () => {
     try{
       const formData=new FormData();
       formData.append("file",getFile);
-      const res= await axios.post("http://localhost:4000/upload",formData);
+      const res= await axios.post("https://hexa-backend.onrender.com/upload",formData);
       return res.data;
     }catch(err){
       console.log(err);
@@ -29,14 +29,14 @@ const WriteProject = () => {
     const imgName=await upload();
     try{
       state?
-      await axios.put(`http://localhost:4000/projects/${state._id}`,{
+      await axios.put(`https://hexa-backend.onrender.com/projects/${state._id}`,{
         title:getTitle,
         desc:getDescription,
         category:getCat,
         img:getFile?imgName:"",
       })
       :
-      await axios.post("http://localhost:4000/projects",{
+      await axios.post("https://hexa-backend.onrender.com/projects",{
         title:getTitle,
         desc:getDescription,
         category:getCat,
@@ -58,7 +58,7 @@ const WriteProject = () => {
           <input id="title" type="text" placeholder="Title" name="title" value={getTitle} onChange={e=>setTitle(e.target.value)}/>
           <ReactQuill className='description' name="description" value={getDescription} onChange={setDescription} theme="snow" />
           <div className='load_img'>
-            <img src={`http://localhost:4000/uploads/${getFile}`} alt="image is here" />
+            <img src={`https://hexa-backend.onrender.com/uploads/${getFile}`} alt="image is here" />
             <input type="file" id="file" name="img" onChange={e=>setFile(e.target.files[0])} style={{display:"none"}}/>
             <label className='file' htmlFor="file">Upload File</label>
           </div>

@@ -5,7 +5,7 @@ import ProjectItem from '../components/project_item/project_item';
 
 const Projects = () => {
 
-    const {getData,getIsLoading, getIsError,reFetch}=useFetch("http://localhost:4000/projects");
+    const {getData,getIsLoading, getIsError,reFetch}=useFetch("https://hexa-backend.onrender.com/projects");
 
   return (
     <div>
